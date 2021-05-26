@@ -1,5 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+   // ViewData["Title"] = "Home Page";
+    Layout = null;
 }
 <style>
     #gateway1 {
@@ -39,12 +41,17 @@
         color: #fff;
     }
 </style>
-<script src="~/MyLibrary/MyLibrary.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <div>
     <div>
         <div class="input-group">
             <span class="input-group-text">En Giriniz</span>
-            <input name="weight" id="xweight" type="text" aria-label="First name" class="form-control">
+            <input name="weight" id="xweight" type="text" aria-label="First name" class="form-control" >
             <span class="input-group-text">Boy Giriniz</span>
             <input name="height" id="yheight" type="text" aria-label="Last name" class="form-control">
             <span class="input-group-text">RSSI Giriniz</span>
@@ -58,6 +65,8 @@
             Kordinatlar
         </button>
         <button id="addNewGateway" class="btn btn-danger" onclick="changeElementPosition()">Pozisyon Değiştir</button>
+        <button id="addNewGateway" class="btn btn-danger" onclick="test()"> Test</button>
+        <button id="show" class="btn btn-danger" > Göster</button>
     </div>
 
     <div id="mydivv0">
@@ -84,7 +93,6 @@
         </div>
     </div>
 </div>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 <script>
 
@@ -128,7 +136,7 @@
         }
 
         function closeDragElement() {
-            // stop moving when mouse button is released:
+            // stop moving when mouse button is releaseViewBagewBag:
             document.onmouseup = null;
             document.onmousemove = null;
         }
@@ -295,17 +303,65 @@
         console.log(A3y);
 
     }
-    //$(document).ready(function () {
+    function test() {
+        var datam = [{
+            "timestamp": "2017-04-28T08:16:13+08:00",
+            "type": "iBeacon",
+            "mac": "CC0101000011",
+            "bleName": "MiniBeacon_00012",
+            "ibeaconUuid": "FDA50693A4E24FB1AFCFC6EB07647825",
+            "ibeaconMajor": "10001",
+            "ibeaconMinor": "19641",
+            "ibeaconTxPower": -58,
+            "rssi": -76,
+            "battery": 100
+        }
+        ]
+        $.ajax({
+            type: "GET",
+            url: '/api/Gateway/',
+            dataType: "json",
+            data: { beacon:datam },
+            success: function (data) {
+                console.log(data)
+            }
+        });
+    }
+</script>
+<script src="~/MyLibrary/MyLibrary.js"></script>
+<script>
+    $(document).ready(function () {
+        //$.ajax({
+        //    url: '/Gateway/PostDatam',
+        //    dataType: "json",
+        //    type: "POST",
+        //    contentType: 'application/json; charset=utf-8', //define a contentType of your request
+        //   // data: { test: comments },
+        //    success: function (data) {
+        //        debugger;
+        //        // data is your result from controller
+        //        if (data.success) {
+        //            alert(data);
 
-    //    const express = require('express')
-    //    const app = express()
-    //    const port = 60210
+        //        }
+        //    },
+        //    error: function (xhr) {
+        //        alert('error');
+        //    }
+        //});
 
-    //    app.get('/', (req, res) => res.send('Hello World!'))
+        $("#show").on("click", function () {
+            //alert()
+            console.log('@ViewBag.gtrrr');
+            //$.ajax({
+            //    url: '/Gateway/PostData' ,
+            //    type: "GET"
+            //}).done(function (partialViewResult) {
+            //    debugger;
+            //    $(".wrapper").html(partialViewResult);
+            //    $(".wrapper").css('display', 'block');
+            //    });
+        });
 
-    //    app.listen(port, () => console.log(`Example app listening at http://localhost:${port}/Home/Index`))
-
-    //    debugger
-
-    //});
+    });
 </script>
