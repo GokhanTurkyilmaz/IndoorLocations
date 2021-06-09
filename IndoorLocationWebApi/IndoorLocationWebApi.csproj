@@ -22,4 +22,12 @@
     <Folder Include="wwwroot\draggable\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\MyLibrary\Trilateration\Beacon.js" />
+    <None Include="wwwroot\MyLibrary\Trilateration\p5.min.js" />
+    <None Include="wwwroot\MyLibrary\Trilateration\sketch.js" />
+    <None Include="wwwroot\trilateration\BeaconGateway.js" />
+    <None Include="wwwroot\trilateration\GetBeaconData.js" />
+  </ItemGroup>
+
 </Project>

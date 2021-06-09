@@ -33,6 +33,7 @@ namespace IndoorLocationWebApi
             services.AddMvcCore()
                .AddApiExplorer();
             services.AddHttpClient();
+            services.AddMemoryCache();
             //  services.AddCors();
 
             services.AddControllersWithViews();
@@ -76,6 +77,8 @@ namespace IndoorLocationWebApi
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {

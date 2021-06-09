@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "defaultProvider": "jsdelivr",
+  "libraries": [
+    {
+      "provider": "unpkg",
+      "library": "node-trilateration@1.0.0",
+      "destination": "wwwroot/node-trilateration/"
+    },
+    {
+      "library": "trilateration@0.0.1",
+      "destination": "wwwroot/trilateration/"
+    }
+  ]
+}
