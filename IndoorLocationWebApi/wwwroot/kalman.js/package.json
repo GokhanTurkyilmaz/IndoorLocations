@@ -1,0 +1,23 @@
+{
+  "name": "kalman.js",
+  "version": "0.0.2",
+  "description": "Kalman filter implementation",
+  "main": "kalman.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha --require babel-register --recursive $(find . -type f -name '*.spec.js' -not -path './node_modules/*')"
+  },
+  "author": "psi",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "mathjs": "^3.16.5"
+  }
+}

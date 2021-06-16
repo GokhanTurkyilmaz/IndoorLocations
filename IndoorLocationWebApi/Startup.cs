@@ -69,7 +69,7 @@ namespace IndoorLocationWebApi
             //Angulardan veya baska yerlerden projeye ulasmak icin 2. adim ve burada sira onemli
             app.ConfigureCustomExceptionMiddleware();
             //app.UseCors(builder => builder.WithOrigins("https://192.168.1.54:45459/api/gateway/data/").AllowAnyHeader());
-
+          
             app.UseHttpsRedirection();
 
             app.UseRouting();

@@ -10,6 +10,28 @@
     {
       "library": "trilateration@0.0.1",
       "destination": "wwwroot/trilateration/"
+    },
+    {
+      "library": "kalman.js@0.0.2",
+      "destination": "wwwroot/kalman.js/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "mathjs@9.4.2",
+      "destination": "wwwroot/mathjs/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "require.js@2.3.6",
+      "destination": "wwwroot/require.js/"
+    },
+    {
+      "library": "kalman-filter@1.9.2",
+      "destination": "wwwroot/kalman-filter/"
+    },
+    {
+      "library": "weighted-positioning@0.0.4",
+      "destination": "wwwroot/weighted-positioning/"
     }
   ]
 }

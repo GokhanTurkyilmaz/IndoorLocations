@@ -30,4 +30,13 @@
     <None Include="wwwroot\trilateration\GetBeaconData.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\kalman-filter\lib\kalman-filter.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\MyLibrary\kalman-filter.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

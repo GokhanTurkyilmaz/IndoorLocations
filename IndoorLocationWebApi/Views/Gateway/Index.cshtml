@@ -6,7 +6,7 @@
 
 <html>
 <head>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-ajax-unobtrusive@3.2.6/dist/jquery.unobtrusive-ajax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
@@ -15,18 +15,45 @@
 
     <script src="~/MyLibrary/Trilateration/Beacon.js"></script>
     <script src="~/MyLibrary/Trilateration/sketch.js"></script>
-    @*<script src="~/MyLibrary/Trilateration/p5.min.js"></script>*@
 
+
+    
 
 </head>
 <body>
 
     <button id="show" class="btn btn-danger"> Göster</button>
-    <button id="start" class="btn btn-success"> Baslat</button>
+    @*<button id="start" class="btn btn-success"> Baslat</button>*@
 </body>
 </html>
+<script  src="~/kalman-filter/docs/dist/kalman-filter.js"></script>
+<script type="module" src="~/Tesst.js"></script>
 
+<script> 
+   
+    //const observations = [-18, -45, -59, -28, -57, -59, -59, -55, -48];
+    //var { KalmanFilter } = kalmanFilter;
+    //const kFilter = new KalmanFilter();
 
+    // //const kFilter = new KalmanFilter({
+    // //   observation: 2,
+    // //   dynamic: 'constant-speed'
+    // //});
+    //const res = kFilter.filterAll(observations)
+    //console.log(res)
+    // equivalent to
+    // new KalmanFilter({
+    // 	observation: {
+    // 		name: 'sensor',
+    // 		sensorDimension: 2
+    // 	},
+    // 	dynamic: {
+    // 		name: 'constant-speed'
+    // 	},
+    // });
+    //const res = kFilter.filterAll(observations)
+   
+</script>
 @section Scripts {
    
 }

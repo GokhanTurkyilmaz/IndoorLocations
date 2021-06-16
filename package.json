@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "kalman-filter": "^1.9.2",
     "pug": "^3.0.2",
-    "trilateration": "^0.0.1"
+    "trilateration": "^0.0.1",
+   
   }
+  
 }
