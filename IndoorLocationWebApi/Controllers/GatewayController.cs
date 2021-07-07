@@ -72,6 +72,31 @@ namespace IndoorLocationWebApi.Controllers
 
         }
 
+        [Microsoft.AspNetCore.Mvc.HttpPost("/gateway/postdata11")]
+        //Get action methods of the previous section
+        public async Task<IHttpActionResult> PostData11([Microsoft.AspNetCore.Mvc.FromBody] IEnumerable<Beacon> beacon)
+        {
+            const string key = "gateway1";
+            _memoryCache.Remove(key);
+            if (beacon != null)
+            {
+                var options = new JsonSerializerOptions
+                {
+                    WriteIndented = true,
+                };
+                string jsonString = JsonSerializer.Serialize(beacon.LastOrDefault(), options);
+                _memoryCache.Set(key, jsonString, new MemoryCacheEntryOptions
+                {
+                    AbsoluteExpiration = DateTime.Now.AddSeconds(20),
+                    Priority = CacheItemPriority.Normal
+                });
+                return (IHttpActionResult)await Task.FromResult(Json(jsonString));
+
+            }
+            return (IHttpActionResult)await Task.FromResult(View());
+
+        }
+
         [Microsoft.AspNetCore.Mvc.HttpPost("/gateway/Gateway2Data")]
         //Get action methods of the previous section
         public async Task<IHttpActionResult> Gateway2Data([Microsoft.AspNetCore.Mvc.FromBody] IEnumerable<Beacon> beacon)
@@ -151,6 +176,11 @@ namespace IndoorLocationWebApi.Controllers
         public async Task<IActionResult> Gateway3()
         {
             return await GetBeaconData("gateway3");
+        }
+
+        public async Task<IActionResult> Gateway4()
+        {
+            return await GetBeaconData("gateway1");
         }
     }
 
